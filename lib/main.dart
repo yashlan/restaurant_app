@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/constant/constant.dart';
 import 'package:restaurant_app/detail_restaurant/detail_restaurant_screen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: kIsWeb ? routeHomeScreen : routeInitial,
       routes: {
         routeInitial: (context) => const SplashScreen(),
         routeHomeScreen: (context) => const ListRestaurantScreen(),
