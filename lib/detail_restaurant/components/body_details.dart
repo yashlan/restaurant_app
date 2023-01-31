@@ -28,8 +28,8 @@ class BodyDetails extends StatelessWidget {
               ),
               SafeArea(
                 child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  color: Colors.black.withOpacity(0.75),
+                  padding: EdgeInsets.all(size.width > 350 ? 8.0 : 0),
+                  color: Colors.black.withOpacity(0.5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -55,20 +55,16 @@ class BodyDetails extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        restaurant.name,
-                        style: const TextStyle(
-                          fontSize: 30,
-                        ),
+                    Text(
+                      textAlign: TextAlign.left,
+                      restaurant.name,
+                      style: const TextStyle(
+                        fontSize: 30,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 12,
-                ),
+                const SizedBox(height: 12),
                 Row(
                   children: <Widget>[
                     Image.asset(
@@ -79,51 +75,60 @@ class BodyDetails extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                     const SizedBox(width: 5),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        restaurant.city,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
+                    Text(
+                      textAlign: TextAlign.left,
+                      restaurant.city,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.grey,
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Deskripsi',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                Row(
+                  children: const [
+                    Text(
+                      textAlign: TextAlign.left,
+                      'Deskripsi',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
                 const SizedBox(height: 12),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    restaurant.description,
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
+                Text(
+                  textAlign: TextAlign.left,
+                  restaurant.description,
+                  style: const TextStyle(
+                    fontSize: 16,
                   ),
                 ),
                 const SizedBox(height: 30),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Menu',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                Row(
+                  children: const [
+                    Text(
+                      textAlign: TextAlign.left,
+                      'Menu',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                ListMenus(restaurant: restaurant),
+                const SizedBox(height: 12),
+                ListMenus(
+                  restaurant: restaurant,
+                  menuType: MenuType.foods,
+                ),
+                const SizedBox(height: 15),
+                ListMenus(
+                  restaurant: restaurant,
+                  menuType: MenuType.drinks,
+                ),
               ],
             ),
           ),
