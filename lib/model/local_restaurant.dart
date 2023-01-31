@@ -25,7 +25,7 @@ class Restaurant {
         description: restaurant['description'],
         pictureId: restaurant['pictureId'],
         city: restaurant['city'],
-        rating: restaurant['rating'],
+        rating: checkDouble(restaurant['rating']),
         menus: Menus.fromJson(restaurant['menus']),
       );
 }
@@ -79,4 +79,12 @@ List<Restaurant> parseRestaurant(String? json) {
   }
   final List parsed = jsonDecode(json)['restaurants'];
   return parsed.map((json) => Restaurant.fromJson(json)).toList();
+}
+
+double checkDouble(dynamic value) {
+  if (value is String) {
+    return double.parse(value);
+  } else {
+    return value+.0;
+  }
 }
