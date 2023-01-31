@@ -6,30 +6,37 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.only(left: 28.0),
-      child: SizedBox(
-        height: size.height * 0.23,
-        child: Row(
+    return Container(
+      color: Colors.redAccent,
+      height: size.height * 0.23,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 28.0, top: 28.0),
+        child: Column(
           children: [
-            RichText(
-              text: const TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Restaurant\n',
-                    style: TextStyle(
-                      fontSize: 45,
-                      fontWeight: FontWeight.w200,
-                    ),
+            Row(
+              children: [
+                Text(
+                  textAlign: TextAlign.left,
+                  'Restaurant',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: size.width > 350 ? 45 : 23,
+                    fontWeight: FontWeight.bold,
                   ),
-                  TextSpan(
-                    text: 'Recommendation restaurant for you!',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  textAlign: TextAlign.left,
+                  'Recommendation restaurant for you!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: size.width > 350 ? 23 : 16,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
