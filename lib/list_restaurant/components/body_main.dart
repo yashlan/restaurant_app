@@ -11,14 +11,16 @@ class BodyMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: <Widget>[
-          const Header(),
-          gridCount == 0
-              ? const RestaurantListView()
-              : RestaurantGridView(gridCount: gridCount),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            const Header(),
+            gridCount == 0
+                ? const RestaurantListView()
+                : RestaurantGridView(gridCount: gridCount),
+          ],
+        ),
       ),
     );
   }
