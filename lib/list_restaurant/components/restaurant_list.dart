@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/constant/constant.dart';
-import 'package:restaurant_app/detail_restaurant/detail_restaurant_screen.dart';
 import 'package:restaurant_app/model/local_restaurant.dart';
 
 class RestaurantListView extends StatelessWidget {
@@ -71,11 +70,7 @@ class RestaurantListView extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            restaurants[index].rating.toString() +
-                                (restaurants[index].rating.toString().length ==
-                                        1
-                                    ? ".0"
-                                    : ''),
+                            restaurants[index].rating.toString(),
                             style: const TextStyle(color: Colors.grey),
                           ),
                         ),
