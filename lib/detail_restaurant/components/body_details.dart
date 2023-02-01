@@ -19,12 +19,10 @@ class BodyDetails extends StatelessWidget {
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Expanded(
-                child: Image.network(
-                  restaurant.pictureId,
-                  width: size.width,
-                  fit: BoxFit.cover,
-                ),
+              Image.network(
+                restaurant.pictureId,
+                width: size.width,
+                fit: BoxFit.cover,
               ),
               SafeArea(
                 child: Container(
