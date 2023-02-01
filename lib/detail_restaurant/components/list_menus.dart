@@ -52,7 +52,9 @@ class ListMenus extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         image: DecorationImage(
-                          image: NetworkImage(restaurant.pictureId),
+                          image: AssetImage(menuType == MenuType.foods
+                              ? 'images/makanan_dummy.jpg'
+                              : 'images/minuman_dummy.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
